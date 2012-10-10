@@ -7,12 +7,12 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.Administration;
 using Microsoft.SharePoint.WebControls;
 
-namespace PacAl.SharePoint.Utilities.Navigation
+namespace DeviQ.SharePoint.Utilities.Navigation
 {
 	[ToolboxItemAttribute(false)]
-	public class PacAlCustomTopNavWebPart : WebPart
+	public class CustomTopNavWebPart : WebPart
 	{
-		public string _MenuList = "PacAlCustomTopNavProvider";
+		public string _MenuList = "CustomTopNavProvider";
 		[Personalizable, WebBrowsable, WebDisplayName("Menu List")]
 		public string Set_MenuList
 		{
@@ -238,7 +238,7 @@ namespace PacAl.SharePoint.Utilities.Navigation
 					return "";
 		}
 
-		public PacAlCustomTopNavWebPart()
+		public CustomTopNavWebPart()
 		{
 			ExportMode = WebPartExportMode.All;
 		}

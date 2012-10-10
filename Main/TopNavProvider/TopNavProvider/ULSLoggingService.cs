@@ -5,12 +5,12 @@ using System.Text;
 using Microsoft.SharePoint.Administration;
 
 
-namespace PacAl.SharePoint.Utilities.Navigation
+namespace DeviQ.SharePoint.Utilities.Navigation
 {
 	[System.Runtime.InteropServices.GuidAttribute("DBEEB5AB-C5A7-46B5-A2BB-5581F960C333")]
 	public class ULSLoggingService : SPDiagnosticsServiceBase
 	{
-		public static string DiagnosticsAreaName = "PACAL"; 
+		public static string DiagnosticsAreaName = "DEVIQ"; 
 		
 		public ULSLoggingService()
         { 
