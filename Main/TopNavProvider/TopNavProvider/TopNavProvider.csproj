@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8DB4FF7C-D1B7-45B5-904C-52C33A59A018}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PacAl.SharePoint.Utilities.Navigation</RootNamespace>
+    <AssemblyName>PacAl.SharePoint.Utilities.Navigation</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint.Publishing, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Security, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CategoryId.cs" />
+    <Compile Include="WebParts\PacAlCustomTopNavWebPart\PacAlCustomTopNavWebPart.cs" />
+    <Compile Include="ULSLoggingService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\PacAlListInstance\PacAlListInstance.feature">
+      <FeatureId>{49bbfd36-b0fb-49c2-b35f-0a7a6e30a3af}</FeatureId>
+    </None>
+    <None Include="TopNav\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4b341785-69c1-4fdd-8596-b4f9161d6545}</SharePointProjectItemId>
+    </None>
+    <None Include="TopNav\TopNavInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b80eaa90-70b4-4efd-9c9d-3c144337f534}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\PacAlCustomTopNavWebPart\PacAlCustomTopNavWebPart.webpart" />
+    <None Include="WebParts\PacAlCustomTopNavWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9dab624b-26ab-4c1a-aaee-78aaf74c3838}</SharePointProjectItemId>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Features\PacAlCustomTopNavWebPart\PacAlCustomTopNavWebPart.feature">
+      <FeatureId>{527f1bfa-22c6-49a0-bd4b-f03aba9b02c4}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Package\Package.package">
+      <PackageId>{5094aa11-4bb1-4a42-acb0-c00090a122b2}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Features\PacAlListInstance\PacAlListInstance.Template.xml">
+      <DependentUpon>PacAlListInstance.feature</DependentUpon>
+    </Content>
+    <Content Include="TopNav\Elements.xml" />
+    <Content Include="TopNav\Schema.xml" />
+    <Content Include="TopNav\TopNavInstance\Elements.xml" />
+    <Content Include="WebParts\PacAlCustomTopNavWebPart\Elements.xml" />
+    <Content Include="Features\PacAlCustomTopNavWebPart\PacAlCustomTopNavWebPart.Template.xml">
+      <DependentUpon>PacAlCustomTopNavWebPart.feature</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

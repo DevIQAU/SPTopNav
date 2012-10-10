@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="5094aa11-4bb1-4a42-acb0-c00090a122b2" solutionId="8164ca07-9f7a-401b-85b3-1ef9ceab0b87" resetWebServer="false" title="PacAl Top Nav" name="PacAlTopNavProvider" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="527f1bfa-22c6-49a0-bd4b-f03aba9b02c4" />
+    <featureReference itemId="49bbfd36-b0fb-49c2-b35f-0a7a6e30a3af" />
+  </features>
+</package>

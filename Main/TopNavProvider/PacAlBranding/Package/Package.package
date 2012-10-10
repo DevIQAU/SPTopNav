@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="4be65f6b-5160-40aa-91d8-07022c607216" solutionId="21a155f0-8c30-4c3d-b114-8a52ece16442" resetWebServer="false" name="PacAl Branding Package" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="69db81d8-d2b3-42ef-ad61-27acc9b129ea" />
+  </features>
+</package>
