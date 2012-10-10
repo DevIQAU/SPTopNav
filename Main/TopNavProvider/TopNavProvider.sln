@@ -1,25 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacAlBranding", "PacAlBranding\PacAlBranding.csproj", "{20DE9BDC-805B-43A2-85CF-13D70EFA166D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopNavProvider", "TopNavProvider\TopNavProvider.csproj", "{8DB4FF7C-D1B7-45B5-904C-52C33A59A018}"
 	ProjectSection(ProjectDependencies) = postProject
 		{20DE9BDC-805B-43A2-85CF-13D70EFA166D} = {20DE9BDC-805B-43A2-85CF-13D70EFA166D}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleBranding", "SampleBranding\SampleBranding.csproj", "{20DE9BDC-805B-43A2-85CF-13D70EFA166D}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccLocalPath0 = .
-		SccLocalPath1 = PacAlBranding
-		SccLocalPath2 = TopNavProvider
+		SccLocalPath1 = TopNavProvider
+		SccLocalPath2 = SampleBranding
 		SccNumberOfProjects = 3
-		SccProjectName1 = PacAlBranding
-		SccProjectName2 = TopNavProvider
-		SccProjectUniqueName1 = PacAlBranding\\PacAlBranding.csproj
-		SccProjectUniqueName2 = TopNavProvider\\TopNavProvider.csproj
-		SccTeamFoundationServer = https://deviq.tfspreview.com/defaultcollection
+		SccProjectName1 = TopNavProvider
+		SccProjectName2 = SampleBranding
+		SccProjectUniqueName1 = TopNavProvider\\TopNavProvider.csproj
+		SccProjectUniqueName2 = SampleBranding\\SampleBranding.csproj
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
