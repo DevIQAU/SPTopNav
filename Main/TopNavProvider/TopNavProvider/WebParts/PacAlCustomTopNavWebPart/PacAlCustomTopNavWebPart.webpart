@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="PacAl.SharePoint.Utilities.Navigation.PacAlCustomTopNavWebPart, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">PacAl - Top Nav WebPart</property>
+        <property name="Description" type="string">PacAl Top Navigation Web Part</property>
+		  <property name="Set_MenuList" type="string">TopNav</property>
+		  <property name="Set_ServerURL" type="string">http://sharepoint.pa.local</property>"
+      </properties>
+    </data>
+  </webPart>
+</webParts>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{20DE9BDC-805B-43A2-85CF-13D70EFA166D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PacAl.SharePoint.Branding</RootNamespace>
+    <AssemblyName>PacAl.SharePoint.Branding</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\PacAlMasterPageGallery\PacAlMasterPageGallery.EventReceiver.cs">
+      <DependentUpon>PacAlMasterPageGallery.feature</DependentUpon>
+    </Compile>
+    <Compile Include="PacAlMasterPageGallery\ChildSiteInit\ChildSiteInit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ContentQueryXsl\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a6c3b8b7-316c-45a0-8a4c-e3bd4289f918}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\PacAlMasterPageGallery\PacAlMasterPageGallery.feature">
+      <FeatureId>{69db81d8-d2b3-42ef-ad61-27acc9b129ea}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="PacAlMasterPageGallery\ChildSiteInit\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d7a6c759-1e34-4585-88e7-9a7b93cf67ac}</SharePointProjectItemId>
+    </None>
+    <None Include="PacAlMasterPageGallery\pacal_search.master">
+      <SubType>ASPXCodeBehind</SubType>
+    </None>
+    <None Include="PacAlMasterPageGallery\pacal.master">
+      <SubType>ASPXCodeBehind</SubType>
+    </None>
+    <None Include="PacAlMasterPageGallery\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f2f2f316-afd5-4364-bc9a-4b52d1bbd518}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{4be65f6b-5160-40aa-91d8-07022c607216}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Style Library\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5e9af081-d31d-4fed-bf2f-e172d9b3be16}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ContentQueryXsl\Elements.xml" />
+    <Content Include="ContentQueryXsl\ItemStyle.xslt" />
+    <Content Include="ContentQueryXsl\Sample.txt" />
+    <Content Include="Features\PacAlMasterPageGallery\PacAlMasterPageGallery.Template.xml">
+      <DependentUpon>PacAlMasterPageGallery.feature</DependentUpon>
+    </Content>
+    <Content Include="PacAlMasterPageGallery\ChildSiteInit\Elements.xml" />
+    <Content Include="PacAlMasterPageGallery\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Style Library\Elements.xml" />
+    <Content Include="Style Library\CSS\pacal.css" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

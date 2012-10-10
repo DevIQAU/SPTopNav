@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Module Name="PacAlMasterPageGallery" Url="_catalogs/masterpage">
+		<File Path="PacAlMasterPageGallery\pacal.master" Url="pacal.master" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE">
+			<Property Name="UIVersion" Value="4" />
+			<Property Name="ContentTypeId" Value="0x010105" />
+		</File>
+		<File Path="PacAlMasterPageGallery\pacal_search.master" Url="pacal_search.master" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" >
+			<Property Name="UIVersion" Value="4" />
+			<Property Name="ContentTypeId" Value="0x010105" />
+		</File>
+	</Module>
+</Elements>

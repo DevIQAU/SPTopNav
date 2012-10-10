@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="ContentQueryXsl">
+    <File Path="ContentQueryXsl\Sample.txt" Url="ContentQueryXsl/Sample.txt" />
+  <File Path="ContentQueryXsl\ItemStyle.xslt" Url="ContentQueryXsl/ItemStyle.xslt" />
+</Module>
+</Elements>

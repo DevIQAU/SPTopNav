@@ -1,0 +1,135 @@
+﻿body{
+	font-family: Gotham, Arial !important;
+	font-size:12px;
+}
+.s4-title
+{
+     height:100%;
+     position: relative;
+     background-image: none;
+     background-attachment: scroll;
+     background-repeat: repeat;
+     background-position-x: 0%;
+     background-position-y: 0%;
+     background-size: auto;
+     background-origin: padding-box;
+     background-clip: border-box;
+     /* background-color: rgb(0, 101, 143); */
+     background-color: #00658f;
+     /* background-color: rgb(0, 65, 83); */
+}
+
+    .s4-title h2
+    {
+        color: #fff;
+    }
+
+        .s4-title h1 a, .s4-title h2 a
+        {
+            color: #fff;
+        }
+
+.ms-socialNotif-text
+{
+    color: #fff;
+}
+
+.s4-titletable
+{
+    font-family: 'Franklin Gothic Book',Arial;
+}
+
+.s4-tn
+{
+    background-color: #00658f;
+    /* background-color: rgb(0, 65, 83); */
+}
+
+.s4-tn li.static > .menu-item {
+	color:#fff;
+}
+
+.ms-listdescription
+{
+	color:#fff;
+}
+.ms-ltviewselectormenuheader .ms-viewselector a, .ms-ltviewselectormenuheader .ms-viewselectorhover a{
+	color:#fff;
+}
+
+.ms-WPBody a:visited{
+	color:#0072bc;
+}
+
+.s4-toplinks .s4-tn a.selected{
+	/* background-color: rgb(0,135,124); */
+	background-color: #2996c4;
+	color:white;
+}
+.s4-tn li.dynamic > a:hover{
+	color:white;
+}
+
+.s4-tn li.dynamic{
+	background-color:#2996c4;
+	/*background-color: rgb(0,176,202); */
+}
+
+.s4-tn li.dynamic > a:hover{
+	/*background-color: rgb(0,135,124);*/
+	background-color: #309dcb;
+	color:white;
+}
+
+.s4-tn li.dynamic > a:visited{
+	/*background-color: rgb(0,176,202);*/
+	color:white;
+}
+
+.s4-tn li.dynamic > .menu-item{
+	color:white;
+}
+
+.s4-tn li.static > menu-item > a:hover{
+	color:white;
+	/*background-color: rgb(0,135,124); */
+	background-color: #2996c4;
+}
+
+.s4-tn li.static > menu-item > a:visited{
+	color:white;
+}
+
+
+.s4-tn ul.dynamic{
+	border-top-width:0px;
+	border-top-style:none;
+}
+.ms-topNavFlyOuts{
+	/*background-color: rgb(0,176,202);*/
+}
+
+.s4-pr .s4-notdlg
+{
+	
+}
+
+body #s4-topheader2{
+	border-top-width:0px;
+	border-bottom-width:0px;
+	border-top-style:none;
+	border-bottom-style:none;
+}
+#s4-leftpanel-content {
+	background-color: #2996c4;
+	
+}
+
+.static > menu-item {
+	color:#fff;
+}
+
+	.static > menu-item > a:hover {
+		color:white;
+		background-color: #309dcb;
+	}
