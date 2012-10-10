@@ -7,8 +7,8 @@
     <ProjectGuid>{8DB4FF7C-D1B7-45B5-904C-52C33A59A018}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PacAl.SharePoint.Utilities.Navigation</RootNamespace>
-    <AssemblyName>PacAl.SharePoint.Utilities.Navigation</AssemblyName>
+    <RootNamespace>DeviQ.SharePoint.Utilities.Navigation</RootNamespace>
+    <AssemblyName>DeviQ.SharePoint.Utilities.Navigation</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -57,12 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryId.cs" />
-    <Compile Include="WebParts\PacAlCustomTopNavWebPart\PacAlCustomTopNavWebPart.cs" />
+    <Compile Include="WebParts\CustomTopNavWebPart\CustomTopNavWebPart.cs" />
     <Compile Include="ULSLoggingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\PacAlListInstance\PacAlListInstance.feature">
+    <None Include="Features\ListInstance\ListInstance.feature">
       <FeatureId>{49bbfd36-b0fb-49c2-b35f-0a7a6e30a3af}</FeatureId>
     </None>
     <None Include="TopNav\SharePointProjectItem.spdata">
@@ -71,12 +71,12 @@
     <None Include="TopNav\TopNavInstance\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{b80eaa90-70b4-4efd-9c9d-3c144337f534}</SharePointProjectItemId>
     </None>
-    <None Include="WebParts\PacAlCustomTopNavWebPart\PacAlCustomTopNavWebPart.webpart" />
-    <None Include="WebParts\PacAlCustomTopNavWebPart\SharePointProjectItem.spdata">
+    <None Include="WebParts\CustomTopNavWebPart\CustomTopNavWebPart.webpart" />
+    <None Include="WebParts\CustomTopNavWebPart\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{9dab624b-26ab-4c1a-aaee-78aaf74c3838}</SharePointProjectItemId>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Features\PacAlCustomTopNavWebPart\PacAlCustomTopNavWebPart.feature">
+    <None Include="Features\CustomTopNavWebPart\CustomTopNavWebPart.feature">
       <FeatureId>{527f1bfa-22c6-49a0-bd4b-f03aba9b02c4}</FeatureId>
     </None>
     <None Include="key.snk" />
@@ -89,15 +89,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Features\PacAlListInstance\PacAlListInstance.Template.xml">
-      <DependentUpon>PacAlListInstance.feature</DependentUpon>
+    <Content Include="Features\ListInstance\ListInstance.Template.xml">
+      <DependentUpon>ListInstance.feature</DependentUpon>
     </Content>
     <Content Include="TopNav\Elements.xml" />
     <Content Include="TopNav\Schema.xml" />
     <Content Include="TopNav\TopNavInstance\Elements.xml" />
-    <Content Include="WebParts\PacAlCustomTopNavWebPart\Elements.xml" />
-    <Content Include="Features\PacAlCustomTopNavWebPart\PacAlCustomTopNavWebPart.Template.xml">
-      <DependentUpon>PacAlCustomTopNavWebPart.feature</DependentUpon>
+    <Content Include="WebParts\CustomTopNavWebPart\Elements.xml" />
+    <Content Include="Features\CustomTopNavWebPart\CustomTopNavWebPart.Template.xml">
+      <DependentUpon>CustomTopNavWebPart.feature</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

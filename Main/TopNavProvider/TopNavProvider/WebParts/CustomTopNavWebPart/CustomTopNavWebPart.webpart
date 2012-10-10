@@ -2,15 +2,15 @@
 <webParts>
   <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
     <metaData>
-      <type name="PacAl.SharePoint.Utilities.Navigation.PacAlCustomTopNavWebPart, $SharePoint.Project.AssemblyFullName$" />
+      <type name="DeviQ.SharePoint.Utilities.Navigation.CustomTopNavWebPart, $SharePoint.Project.AssemblyFullName$" />
       <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
     </metaData>
     <data>
       <properties>
-        <property name="Title" type="string">PacAl - Top Nav WebPart</property>
-        <property name="Description" type="string">PacAl Top Navigation Web Part</property>
+        <property name="Title" type="string">Top Nav WebPart</property>
+        <property name="Description" type="string">Top Navigation Web Part</property>
 		  <property name="Set_MenuList" type="string">TopNav</property>
-		  <property name="Set_ServerURL" type="string">http://sharepoint.pa.local</property>"
+		  <property name="Set_ServerURL" type="string">http://someurl</property>"
       </properties>
     </data>
   </webPart>
