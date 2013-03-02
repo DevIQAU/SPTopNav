@@ -4,7 +4,7 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
 using Microsoft.SharePoint.Workflow;
 
-namespace PacAl.SharePoint.Branding.PacAlMasterPageGallery.ChildSiteInit
+namespace DeviQ.SharePoint.Branding.SampleMasterPageGallery.ChildSiteInit
 {
 	/// <summary>
 	/// Web Events

@@ -7,8 +7,8 @@
     <ProjectGuid>{20DE9BDC-805B-43A2-85CF-13D70EFA166D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PacAl.SharePoint.Branding</RootNamespace>
-    <AssemblyName>PacAl.SharePoint.Branding</AssemblyName>
+    <RootNamespace>DeviQ.SharePoint.Branding</RootNamespace>
+    <AssemblyName>DeviQ.SharePoint.Branding</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -52,30 +52,27 @@
     <Reference Include="Microsoft.SharePoint" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\PacAlMasterPageGallery\PacAlMasterPageGallery.EventReceiver.cs">
-      <DependentUpon>PacAlMasterPageGallery.feature</DependentUpon>
+    <Compile Include="Features\SampleMasterPageGallery\SampleMasterPageGallery.EventReceiver.cs">
+      <DependentUpon>SampleMasterPageGallery.feature</DependentUpon>
     </Compile>
-    <Compile Include="PacAlMasterPageGallery\ChildSiteInit\ChildSiteInit.cs" />
+    <Compile Include="SampleMasterPageGallery\ChildSiteInit\ChildSiteInit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ContentQueryXsl\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{a6c3b8b7-316c-45a0-8a4c-e3bd4289f918}</SharePointProjectItemId>
-    </None>
-    <None Include="Features\PacAlMasterPageGallery\PacAlMasterPageGallery.feature">
+    <None Include="Features\SampleMasterPageGallery\SampleMasterPageGallery.feature">
       <FeatureId>{69db81d8-d2b3-42ef-ad61-27acc9b129ea}</FeatureId>
     </None>
     <None Include="key.snk" />
-    <None Include="PacAlMasterPageGallery\ChildSiteInit\SharePointProjectItem.spdata">
+    <None Include="SampleMasterPageGallery\ChildSiteInit\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{d7a6c759-1e34-4585-88e7-9a7b93cf67ac}</SharePointProjectItemId>
     </None>
-    <None Include="PacAlMasterPageGallery\pacal_search.master">
+    <None Include="SampleMasterPageGallery\sample_search.master">
       <SubType>ASPXCodeBehind</SubType>
     </None>
-    <None Include="PacAlMasterPageGallery\pacal.master">
+    <None Include="SampleMasterPageGallery\sample.master">
       <SubType>ASPXCodeBehind</SubType>
     </None>
-    <None Include="PacAlMasterPageGallery\SharePointProjectItem.spdata">
+    <None Include="SampleMasterPageGallery\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{f2f2f316-afd5-4364-bc9a-4b52d1bbd518}</SharePointProjectItemId>
     </None>
     <None Include="Package\Package.package">
@@ -88,20 +85,22 @@
       <SharePointProjectItemId>{5e9af081-d31d-4fed-bf2f-e172d9b3be16}</SharePointProjectItemId>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="ContentQueryXsl\Elements.xml" />
-    <Content Include="ContentQueryXsl\ItemStyle.xslt" />
-    <Content Include="ContentQueryXsl\Sample.txt" />
-    <Content Include="Features\PacAlMasterPageGallery\PacAlMasterPageGallery.Template.xml">
-      <DependentUpon>PacAlMasterPageGallery.feature</DependentUpon>
+    <ProjectReference Include="..\Deviq.SharePoint.Utils\Deviq.SharePoint.Utils.csproj">
+      <Project>{070c106c-2c5f-439f-97e4-1bfa8ae58707}</Project>
+      <Name>Deviq.SharePoint.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features\SampleMasterPageGallery\SampleMasterPageGallery.Template.xml">
+      <DependentUpon>SampleMasterPageGallery.feature</DependentUpon>
     </Content>
-    <Content Include="PacAlMasterPageGallery\ChildSiteInit\Elements.xml" />
-    <Content Include="PacAlMasterPageGallery\Elements.xml">
+    <Content Include="SampleMasterPageGallery\ChildSiteInit\Elements.xml" />
+    <Content Include="SampleMasterPageGallery\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Style Library\Elements.xml" />
-    <Content Include="Style Library\CSS\pacal.css" />
+    <Content Include="Style Library\CSS\sample.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

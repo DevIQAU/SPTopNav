@@ -7,7 +7,7 @@
 <%@ Register TagPrefix="wssuc" TagName="Welcome" src="~/_controltemplates/Welcome.ascx" %>
 <%@ Register TagPrefix="wssuc" TagName="MUISelector" src="~/_controltemplates/MUISelector.ascx" %>
 <%@ Register TagPrefix="wssuc" TagName="DesignModeConsole" src="~/_controltemplates/DesignModeConsole.ascx" %>
-<%@ Register Tagprefix="myMenu" Namespace="PacAl.SharePoint.Utilities.Navigation" Assembly="PacAl.SharePoint.Utilities.Navigation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f9a31ac0268bd0ed" %>
+<%@ Register Tagprefix="myMenu" Namespace="DeviQ.SharePoint.Utilities.Navigation" Assembly="DeviQ.SharePoint.Utilities.Navigation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f9a31ac0268bd0ed" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html id="Html1" lang="<%$Resources:wss,language_value%>" dir="<%$Resources:wss,multipages_direction_dir_value%>" runat="server" xmlns:o="urn:schemas-microsoft-com:office:office" __expr-val-dir="ltr">
 <head id="Head1" runat="server">
@@ -392,10 +392,10 @@
 						<h2 class="ms-hidden">
 						<SharePoint:EncodedLiteral ID="EncodedLiteral5" runat="server" text="<%$Resources:wss,topnav_pagetitle%>" EncodeMethod="HtmlEncode"/></h2>
 								<asp:ContentPlaceHolder id="PlaceHolderHorizontalNav" runat="server">
-									<myMenu:PacAlCustomTopNavWebPart 
+									<myMenu:CustomTopNavWebPart 
 											runat="server" 
 											Set_MenuList="TopNav"
-											Set_ServerURL="http://sharepoint.pa.local"
+											Set_ServerURL=""
 											id="TopNavigationMenu" 
 											__WebPartId="{317AC102-D1F9-4878-A675-68340A6654AC}" /> 
 								</asp:ContentPlaceHolder>
