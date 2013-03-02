@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
 	<Module Name="Style Library" Url="Style Library/CSS">
-		<File Path="Style Library\CSS\pacal.css" Url="pacal.css" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE"/>
-		
-	</Module>
-	<Module Name="Scripts" Url="Style Library/Scripts">
-		<File Path="Style Library\Scripts\GroupedViewRemoveHeader.js" Url="GroupedViewRemoveHeader.js" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" />
+		<File Path="Style Library\CSS\sample.css" Url="sample.css" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE"/>
 	</Module>
 </Elements>

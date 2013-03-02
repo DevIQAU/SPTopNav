@@ -5,7 +5,7 @@
         <Name>ChildSiteInitWebProvisioned</Name>
         <Type>WebProvisioned</Type>
         <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
-        <Class>PacAl.SharePoint.Branding.PacAlMasterPageGallery.ChildSiteInit.ChildSiteInit</Class>
+        <Class>DeviQ.SharePoint.Branding.SampleMasterPageGallery.ChildSiteInit.ChildSiteInit</Class>
         <SequenceNumber>10000</SequenceNumber>
       </Receiver>
   </Receivers>

@@ -6,6 +6,9 @@ using System.Web.UI.WebControls.WebParts;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Administration;
 using Microsoft.SharePoint.WebControls;
+using System.Configuration;
+using Microsoft.Office.Server.Audience;
+using Microsoft.Office.Server.WebControls;
 
 namespace DeviQ.SharePoint.Utilities.Navigation
 {
@@ -33,6 +36,10 @@ namespace DeviQ.SharePoint.Utilities.Navigation
 		{
 			get
 			{
+				if (string.IsNullOrEmpty(_ServerURL))
+				{
+					return _ServerURL;
+				}
 				if (_ServerURL.Trim().EndsWith("/"))
 					return _ServerURL.Trim().TrimEnd(fwdSlash);
 				else
@@ -274,21 +281,43 @@ namespace DeviQ.SharePoint.Utilities.Navigation
 				_spMenu.EnableViewState = false;
 
 
-				SPSite thisSite;
-				if (Set_ServerURL == "" || Set_ServerURL == null)
+				SPSite thisSite = null;
+				try
 				{
-					thisSite = SPControl.GetContextSite(Context);
-					Set_ServerURL = thisSite.Url;
-				}
-				else
-					thisSite = new SPSite(Set_ServerURL);
+					if (string.IsNullOrEmpty(Set_ServerURL))
+					{
+						//Try to get the ServerURl from the web config
+						Set_ServerURL = ConfigurationManager.AppSettings["topNavWebAppURL"];
+						if (string.IsNullOrEmpty(Set_ServerURL))
+						{
+							//If cannot get from web config then set to the current web application
+							Set_ServerURL = SPContext.Current.Site.WebApplication.GetResponseUri(SPContext.Current.Site.Zone).AbsoluteUri;
+						}
+						thisSite = new SPSite(Set_ServerURL);
+					}
+					else
+						thisSite = new SPSite(Set_ServerURL);
 
-				if (Set_WebSite == "" || Set_WebSite == null)
-				{
-					thisWeb = thisSite.OpenWeb("/");
+					if (Set_WebSite == "" || Set_WebSite == null)
+					{
+						thisWeb = thisSite.OpenWeb("/");
+					}
+					else
+						thisWeb = thisSite.OpenWeb(Set_WebSite);
 				}
-				else
-					thisWeb = thisSite.OpenWeb(Set_WebSite);
+				finally
+				{
+					if (thisSite != null)
+					{
+						thisSite.Dispose();
+					}
+
+				}
+
+				AudienceManager audMgr = new AudienceManager(SPServiceContext.GetContext(thisSite));
+				AudienceCollection audiences = audMgr.Audiences;
+				AudienceLoader audienceLoader = AudienceLoader.GetAudienceLoader();
+				string target = "";
 
 				SPList _spListMenu = thisWeb.Lists[Set_MenuList];
 				_NewWindowFieldExists = _spListMenu.Fields.ContainsField("OpenNewWindow");
@@ -298,21 +327,28 @@ namespace DeviQ.SharePoint.Utilities.Navigation
 				SPListItemCollection _spListItems = _spListMenu.GetItems(_spQuery);
 				foreach (SPListItem item in _spListItems)
 				{
-
-					if (item["Link URL"] == null)
+					string audienceFieldValue = (string)item["CanBeSeenBy"];
+					if (string.IsNullOrEmpty(audienceFieldValue) || AudienceManager.IsCurrentUserInAudienceOf(audienceLoader, audienceFieldValue, false))
 					{
-						_spMenuItem = new MenuItem(item["Title"].ToString());
+						if (item["Link URL"] == null)
+						{
+							_spMenuItem = new MenuItem(item["Title"].ToString());
+						}
+						else
+						{
+							if (_NewWindowFieldExists && item["OpenNewWindow"] != null && (Boolean)item["OpenNewWindow"] == true)
+							{
+								target = "_blank";
+							}
+							_spMenuItem = new MenuItem(item["Title"].ToString(), "", "", SetServerURL(item["LinkURL"].ToString()), target);
+						}
+						GetListItems(item["ID"].ToString(), _spMenuItem, _spListMenu, thisSite);
+						if (Page.Request.Url.AbsoluteUri == item["Link URL"].ToString())
+						{
+							_spMenuItem.Selected = true;
+						}
+						_spMenu.Items.Add(_spMenuItem);
 					}
-					else
-					{
-						_spMenuItem = new MenuItem(item["Title"].ToString(), "", "", SetServerURL(item["LinkURL"].ToString()));
-					}
-					GetListItems(item["ID"].ToString(), _spMenuItem, _spListMenu);
-					if (Page.Request.Url.AbsoluteUri == item["Link URL"].ToString())
-					{
-						_spMenuItem.Selected = true;
-					}
-					_spMenu.Items.Add(_spMenuItem);
 				}
 
 				Controls.Add(_spMenu);
@@ -334,8 +370,12 @@ namespace DeviQ.SharePoint.Utilities.Navigation
 					thisWeb.Dispose();
 			}
 		}
-		private void GetListItems(string str, MenuItem _spMenu, SPList _spListMenu)
+		private void GetListItems(string str, MenuItem _spMenu, SPList _spListMenu, SPSite thisSite)
 		{
+			AudienceManager audMgr = new AudienceManager(SPServiceContext.GetContext(thisSite));
+			AudienceCollection audiences = audMgr.Audiences;
+			AudienceLoader audienceLoader = AudienceLoader.GetAudienceLoader();
+
 			try
 			{
 				SPQuery _spQuery = new SPQuery();
@@ -346,18 +386,22 @@ namespace DeviQ.SharePoint.Utilities.Navigation
 				foreach (SPListItem item in _spListItems)
 				{
 					target = "";
-					if (item["Link URL"] == null)
+					string audienceFieldValue = (string)item["CanBeSeenBy"];
+					if (string.IsNullOrEmpty(audienceFieldValue) || AudienceManager.IsCurrentUserInAudienceOf(audienceLoader, audienceFieldValue, false))
 					{
-						_spMenuItem = new MenuItem(item["Title"].ToString());
+						if (item["Link URL"] == null)
+						{
+							_spMenuItem = new MenuItem(item["Title"].ToString());
+						}
+						else
+						{
+							if (_NewWindowFieldExists && item["OpenNewWindow"] != null && (Boolean)item["OpenNewWindow"] == true)
+								target = "_blank";
+							_spMenuItem = new MenuItem(item["Title"].ToString(), "", "", SetServerURL(item["Link URL"].ToString()), target);
+						}
+						GetListItems(item["ID"].ToString(), _spMenuItem, _spListMenu, thisSite);
+						_spMenu.ChildItems.Add(_spMenuItem);
 					}
-					else
-					{
-						if (_NewWindowFieldExists && item["OpenNewWindow"] != null && (Boolean)item["OpenNewWindow"] == true)
-							target = "_blank";
-						_spMenuItem = new MenuItem(item["Title"].ToString(), "", "", SetServerURL(item["Link URL"].ToString()), target);
-					}
-					GetListItems(item["ID"].ToString(), _spMenuItem, _spListMenu);
-					_spMenu.ChildItems.Add(_spMenuItem);
 				}
 			}
 			catch (Exception ex)
